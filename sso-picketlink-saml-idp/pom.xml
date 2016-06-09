@@ -10,7 +10,7 @@
     <version>7.2.3</version>
   </parent>
 
-  <artifactId>sso-idp-picketlink-saml</artifactId>
+  <artifactId>sso-picketlink-saml-idp</artifactId>
   <version>0.0.1.Final-SNAPSHOT</version>
 
   <packaging>war</packaging>

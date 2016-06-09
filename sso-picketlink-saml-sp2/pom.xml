@@ -11,7 +11,7 @@
     <version>7.2.3</version>
   </parent>
 
-  <artifactId>sso-with-picketlink-and-saml-sp2</artifactId>
+  <artifactId>sso-picketlink-saml-sp2</artifactId>
   <version>1.0-SNAPSHOT</version>
 
   <packaging>war</packaging>
