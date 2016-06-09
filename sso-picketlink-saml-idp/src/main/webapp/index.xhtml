@@ -13,16 +13,13 @@
 			<ui:define name="content">
 				<h:form style="font-size: 20pt">			
 				      <br/><br/>
-							<h:outputText value="Herzlich Willkommen, #{request.getUserPrincipal().getName()}" />
+							<h:outputText value="Herzlich Willkommen, #{request.getUserPrincipal().getName()}!" />
 							<br/><br/>
 							<h:outputLink
 								value="http://localhost:8080/service-provider-1/index.xhtml">Service Provider 1</h:outputLink>
 								<br/>
 								<h:outputLink
-                value="http://localhost:8080/service-provider-2/index.xhtml">Service Provider 2</h:outputLink>
-                <br/>
-                <br/>
-							<a href="?GLO=true">Global Logout</a>				
+                value="http://localhost:8080/service-provider-2/index.xhtml">Service Provider 2</h:outputLink>		
 				</h:form>
 			</ui:define>
 		</ui:composition>

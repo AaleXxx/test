@@ -5,9 +5,7 @@
   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
   version="2.5">
 
-  <display-name>PicketLink Sales Service Provider</display-name>
-
-  <description>PicketLink Service Provider With a Basic Configuration using SAML HTTP POST Binding</description>
+  <display-name>Service Provider 1</display-name>
     
     <!-- Welcome page -->
   <welcome-file-list>
@@ -28,11 +26,12 @@
 	<!-- Define a Security Constraint on this Application -->
   <security-constraint>
     <web-resource-collection>
-      <web-resource-name>Service Provider 1</web-resource-name>
+      <web-resource-name>sp1</web-resource-name>
       <url-pattern>/*</url-pattern>
     </web-resource-collection>
     <auth-constraint>
-      <role-name>manager</role-name>
+      <role-name>admin</role-name>
+      <role-name>sp1</role-name>
     </auth-constraint>
   </security-constraint>
 
@@ -47,16 +46,24 @@
    <!-- Define the Login Configuration for this Application -->
     <login-config>
     <auth-method>FORM</auth-method>
-    <realm-name>Tomcat SALES Application</realm-name>
+    <realm-name>service-provider-1</realm-name>
     <form-login-config>
       <form-login-page>/sites/login.xhtml</form-login-page>
       <form-error-page>/sites/login-error.xhtml</form-error-page>
     </form-login-config>
   </login-config>
+  
+  <!-- Error-Seite, wenn nicht autorisiert. -->
+  <error-page>
+    <error-code>403</error-code>
+    <location>/forbidden-error.xhtml</location>
+  </error-page>
 
 	<!-- Security roles referenced by this web application -->
   <security-role>
-    <description>The role that is required to log in to the Manager Application</description>
-    <role-name>manager</role-name>
+    <role-name>admin</role-name>
+  </security-role>
+  <security-role>    
+    <role-name>sp1</role-name>
   </security-role>
 </web-app>

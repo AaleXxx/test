@@ -39,10 +39,6 @@
       <id>gedoplanPublic</id>
       <url>http://service.gedoplan.de/nexus/content/groups/public</url>
     </repository>
-    <repository>
-      <id>gedoplanPrivate</id>
-      <url>${mvnRepoUrl.gedoplanPrivate}</url>
-    </repository>
   </repositories>
 
   <dependencies>
