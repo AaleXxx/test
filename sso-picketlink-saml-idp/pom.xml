@@ -4,45 +4,27 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>de.gedoplan</groupId>
-    <artifactId>build-master</artifactId>
-    <version>7.2.3</version>
-  </parent>
-
+  <groupId>de.gedoplan</groupId>
   <artifactId>sso-picketlink-saml-idp</artifactId>
   <version>0.0.1.Final-SNAPSHOT</version>
 
   <packaging>war</packaging>
 
-  <url>http://www.gedoplan.de</url>
-
-  <repositories>
-    <repository>
-      <id>gedoplanPublic</id>
-      <url>http://service.gedoplan.de/nexus/content/groups/public</url>
-    </repository>
-  </repositories>
-
   <properties>
-        <!-- WildFly dependency versions -->
-    <version.wildfly.maven.plugin>1.0.1.Final</version.wildfly.maven.plugin>
+        <!-- WildFly Dependency Version -->
+    <version.wildfly.maven.plugin>1.0.2.Final</version.wildfly.maven.plugin>
 
-        <!-- PicketLink dependency versions -->
+        <!-- PicketLink Dependency Version -->
     <version.picketlink.javaee.bom>2.7.1.Final</version.picketlink.javaee.bom>  
 
         <!-- maven-compiler-plugin -->
-    <version.compiler.plugin>3.1</version.compiler.plugin>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    
-    <!-- maven-war-plugin -->
-    <target.container>wildfly</target.container>
+    <maven.compiler.source>1.8</maven.compiler.source>    
   </properties>
 
   <dependencyManagement>
     <dependencies>
-      <!-- Dependency Management for PicketLink and Java EE 6.0. -->
+      <!-- Dependency Management für PicketLink mit Java EE 7 -->
       <dependency>
         <groupId>org.picketlink</groupId>
         <artifactId>picketlink-javaee-7.0</artifactId>
@@ -63,20 +45,16 @@
   </dependencies>
 
   <build>
-        <!-- Set the name of the war, used as the context root when the app is deployed -->
     <finalName>${project.artifactId}</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-war-plugin</artifactId>
         <configuration>
-                    <!-- Java EE 6 doesn't require web.xml, Maven needs to catch up! -->
           <failOnMissingWebXml>false</failOnMissingWebXml>
-
-                    <!-- We need to get the configuration resources for the provided target container. -->
-          <classifier>${target.container}</classifier>
+          <classifier>wildfly</classifier>
         </configuration>
       </plugin>
-            <!-- JBoss AS plugin to deploy war -->
+            <!-- WildFly Plugin zum Deployen auf den Application-Server -->
       <plugin>
         <groupId>org.wildfly.plugins</groupId>
         <artifactId>wildfly-maven-plugin</artifactId>
