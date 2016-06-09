@@ -51,7 +51,6 @@
         <artifactId>maven-war-plugin</artifactId>
         <configuration>
           <failOnMissingWebXml>false</failOnMissingWebXml>
-          <classifier>wildfly</classifier>
         </configuration>
       </plugin>
             <!-- WildFly Plugin zum Deployen auf den Application-Server -->
