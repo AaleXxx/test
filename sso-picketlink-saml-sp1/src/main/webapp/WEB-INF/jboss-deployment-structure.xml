@@ -1,7 +1,6 @@
 <jboss-deployment-structure>
     <deployment>
-        <!-- You must configure the PicketLink dependency to your deployment. The dependency above is a reference to a static module
-        from JBoss EAP modules directory. -->
+        <!-- Die Dependency des PicketLink-Moduls muss hinzugefügt werden, damit sie der WildFly Container verwendet. -->
         <dependencies>
             <module name="org.picketlink"/>
         </dependencies>

@@ -1,5 +1,5 @@
 <jboss-web>
-    <!-- Die Security-Domain auf die sich der Service Provider bezieht. In diesem Fall eine UserRole
+    <!-- Die Security-Domain auf die sich der Identity Provider bezieht. In diesem Fall eine UsersRoles
          Authentifizierung via Property-Files (main/resource/). -->
     <security-domain>idp</security-domain>
 
